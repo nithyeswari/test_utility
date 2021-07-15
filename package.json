@@ -1,0 +1,25 @@
+{
+  "name": "superawesome",
+  "version": "1.0.0",
+  "description": "Utility to group anagrams",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nithyeswari/test_utility.git"
+  },
+  "author": "Nithyeswari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nithyeswari/test_utility/issues"
+  },
+  "homepage": "https://github.com/nithyeswari/test_utility#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "event-stream": "^4.0.1"
+  }
+}
