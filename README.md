@@ -42,22 +42,22 @@ P - Total number  of string
 
 ### Refer below for more details,
 
-• algorithmitic complexity of buiding charater map
-  let firstCharMap = GetHistogram(first);  
+- complexity of buiding charater map
+  ` let firstCharMap = GetHistogram(first); ` 
 is O(N) 
 
-• complexity of charatermap comparision
-for (let char in firstCharMap) {
-}
+- complexity of charatermap comparision
+`for (let char in firstCharMap) {
+}`
 is O(N/2) -> only half of the strings in array go through this.
 
-• complexity of grouping
-for (let groupKey in groupedList) { 
-}
+- complexity of grouping
+`for (let groupKey in groupedList) { 
+}`
 is O(P)
 
-• complexity of processing all lines
-isAnagram()
+- complexity of processing all lines
+`isAnagram()`
 is O(P)
 
 O(P*P*(O(N)+O(N/2)) = O(P^2N)
@@ -72,4 +72,5 @@ P - Total number of string
 
 # Further enchancements
 
-Reduce the space complexity  
+- Reduce the space complexity 
+- Memonize function call  
