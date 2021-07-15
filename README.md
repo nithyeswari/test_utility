@@ -23,7 +23,7 @@ You can make the following assumptions about the data in the files::
 
 ## Solution
 
-Build a frequency character histograms of each string and check they are same.
+Build a frequency character histograms of each string and check whether those histograms are same.
 
 ## How to run?
 
