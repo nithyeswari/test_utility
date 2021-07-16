@@ -43,13 +43,13 @@ is O(N/2) -> only half of the strings in array go through this.
 - complexity of grouping
 `for (let groupKey in groupedList) { 
 }`
-is O(P)
+is O(log P)
 
 - complexity of processing all lines
 `isAnagram()`
 is O(P)
 
-O(P*P*(O(N)+O(N/2)) = O(P^2N)
+O(P*log P*(O(N)+O(N/2)) = O(PlogPN)
 
 
 ## Space complexity  
