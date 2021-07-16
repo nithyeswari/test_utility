@@ -24,7 +24,7 @@ npm run test
 
 ## Run Time complexity 
 
-Runtime complexity is O(P^2N)
+Runtime complexity is O(PlogPN)
 
 N - length of string
 P - Total number  of string
