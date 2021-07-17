@@ -3,6 +3,7 @@ const fs = require('fs');
 const Rx = require('rxjs');
 const isAnagram = require('./anagram')
 const processingStatus$ = new Rx.Subject();
+processingStatus$.subscribe((message)=>console.log('['+ new Date().toString()+']'+message));
 var groupedList = null;
 const chunk = (arr, size) => arr.reduce((acc, e, i) => (i % size ? acc[acc.length - 1].push(e) : acc.push([e]), acc), []);
 
@@ -25,12 +26,12 @@ function main() {
             let filteredList = Object.keys(groupedList).filter(f => f.length === line.length);
             let chunkList = chunk(filteredList, 1000);
             let promiseList = chunkList.map(chunk => lineMatched(chunk, line)); 
-            await Promise.all(promiseList).then(values => { 
+            await Promise.any(promiseList).then(values => {  
                 if (values.indexOf('true')==-1) {
                     groupedList[line] = [line];
                 }
             }).catch(err => {
-                console.log(err + '[' + line + ']');
+                groupedList[line] = [line]; 
             });
         }
     })).on('error', (err) => {
@@ -42,13 +43,13 @@ function main() {
 }
 
 async function lineMatched(filteredList, line) {
-    return new Promise((resolve) => {
+    return new Promise((resolve) => { 
         for (let groupKey of filteredList) {
             if (isAnagram(groupKey, line)) {
-                groupedList[groupKey] = [...groupedList[groupKey], line];
+                groupedList[groupKey] = [...groupedList[groupKey], line]; 
                 resolve('true');
             }
-        }
+        } 
         resolve('false');
     }) ;
 }
